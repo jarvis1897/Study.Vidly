@@ -1,0 +1,21 @@
+﻿@using Vidly.Models
+@model List<Customer>
+@{
+    ViewBag.Title = "Customers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Customers</h2>
+
+@if (Model is null)
+{
+    <p>There are no customers.</p>
+}
+
+<table class="table table-bordered table-hover">
+    <tr><th>Customer</th></tr>
+    @foreach (var customer in Model)
+    {
+        <tr><td>@customer.Name</td></tr>
+    }
+</table>
